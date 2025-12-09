@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sean Tommasi | Scholarly Editing, Monographs, Dissertations & Research Manuscripts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Editorial specialist for scholarly manuscripts, academic monographs, research-based nonfiction, and grant proposals.">
+  <style>
+    /* ===== Base / Theme ===== */
+    :root {
+      --bg-page: #e8f4f4;
+      --bg-card: #ffffff;
+      --bg-banner: #fdf7e5;
+      --bg-status: #f0f0ff;
+      --bg-highlight: #fff8e7;
+      --bg-info: #f8fdfd;
+      --bg-col: #f9fbff;
+
+      --border-main: #666666;
+      --border-soft: #cccccc;
+      --border-highlight: #ffbf60;
+
+      --text-main: #202020;
+      --text-muted: #555555;
+      --text-accent: #333366;
+      --link: #0044aa;
+      --link-hover-bg: #fffdc7;
+      --shadow-main: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --radius-card: 10px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #f5fbff 0, var(--bg-page) 55%, #d7e9e9 100%);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Verdana", "Arial", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: var(--link-hover-bg);
+    }
+
+    /* ===== Layout ===== */
+    .page-wrap {
+      max-width: 960px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-main);
+      overflow: hidden;
+    }
+
+    header {
+      background-color: var(--bg-banner);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 14px 20px 12px;
+    }
+
+    .header-topline {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0.9;
+    }
+
+    .header-main {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .header-main-left {
+      flex: 1 1 auto;
+      min-width: 220px;
+    }
+
+    .header-main-right {
+      flex: 0 0 auto;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-left: 1px dotted var(--border-soft);
+      padding-left: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 30px);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #333355;
+    }
+
+    h2 {
+      margin: 4px 0 2px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .tagline-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      margin-top: 4px;
+      background-color: #ffffcc;
+      border-radius: 999px;
+      border: 1px solid #e0d797;
+      font-size: 11px;
+      color: #444444;
+      white-space: nowrap;
+    }
+
+    .tagline-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #ff9900;
+    }
+
+    .mono {
+      font-family: "Courier New", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Lucida Console", monospace;
+    }
+
+    /* ===== Status / Info Bar ===== */
+    .statusbar {
+      background-color: var(--bg-status);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 6px 16px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .statusbar-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .status-label {
+      font-weight: 600;
+    }
+
+    .status-pill {
+      border-radius: var(--radius-pill);
+      border: 1px solid #c5cef7;
+      padding: 2px 8px;
+      background-color: #ffffff;
+      font-size: 10px;
+    }
+
+    /* ===== Main Content ===== */
+    main {
+      padding: 18px 20px 20px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    .section-header {
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-accent);
+    }
+
+    p {
+      margin: 4px 0 10px;
+      font-size: 14px;
+    }
+
+    ul,
+    ol {
+      margin: 4px 0 10px;
+      padding-left: 18px;
+      font-size: 14px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .highlight-box {
+      border: 1px solid var(--border-highlight);
+      background-color: var(--bg-highlight);
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .strong-label {
+      font-weight: 600;
+      color: var(--text-accent);
+    }
+
+    .inline-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 4px 0 2px;
+    }
+
+    .badge {
+      font-size: 11px;
+      border-radius: var(--radius-pill);
+      border: 1px solid #e0e4f7;
+      padding: 2px 8px;
+      background-color: #f7f8ff;
+    }
+
+    /* ===== Columns ===== */
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .column {
+      flex: 1 1 260px;
+      border: 1px solid #dddddd;
+      background-color: var(--bg-col);
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .column-title {
+      font-weight: 600;
+      color: var(--text-accent);
+      margin-bottom: 4px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .info-strip {
+      border: 1px dashed var(--border-soft);
+      background-color: var(--bg-info);
+      padding: 8px 10px;
+      margin-top: 8px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .notepad {
+      border: 1px solid var(--border-soft);
+      border-radius: 6px;
+      background-image: linear-gradient(to bottom,
+        #fdfdfd 0,
+        #fdfdfd 24px,
+        #eaeaea 25px);
+      background-size: 100% 25px;
+      padding: 10px 12px;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .notepad-title {
+      font-weight: 600;
+      color: var(--text-accent);
+      margin-bottom: 6px;
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px dotted var(--border-soft);
+      margin: 12px 0;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .small {
+      font-size: 12px;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: #f4f4f4;
+      border-top: 1px solid var(--border-soft);
+      padding: 8px 14px 12px;
+      font-size: 11px;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    footer hr {
+      border: none;
+      border-top: 1px dashed var(--border-soft);
+      margin-bottom: 6px;
+    }
+
+    footer .mono {
+      font-size: 11px;
+    }
+
+    /* ===== Responsive Tweaks ===== */
+    @media (max-width: 720px) {
+      .page-wrap {
+        margin: 12px auto;
+        padding: 0 10px;
+      }
+
+      .card {
+        border-radius: 0;
+        box-shadow: none;
+        border-left: none;
+        border-right: none;
+      }
+
+      header {
+        padding: 12px 14px 10px;
+      }
+
+      main {
+        padding: 14px 14px 16px;
+      }
+
+      .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-main-right {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 4px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="card">
+    <header>
+      <div class="header-topline">
+        Editing &amp; Stylistic Revision for Scholarly &amp; Research-Based Writing
+      </div>
+      <div class="header-main">
+        <div class="header-main-left">
+          <h1>Sean&nbsp;Tommasi</h1>
+          <h2>Academic &amp; Scholarly Editorial Specialist</h2>
+          <div class="tagline-chip">
+            <span class="tagline-dot"></span>
+            <span>Clarity and precision for manuscripts where ideas matter.</span>
+          </div>
+        </div>
+        <div class="header-main-right">
+          <div class="mono">[ specialization: research-driven manuscripts ]</div>
+          <div class="mono">[ focus: clarity, structure, scholarship ]</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="statusbar">
+      <div class="statusbar-inner mono">
+        <span class="status-label">status</span>
+        <span>›</span>
+        <span class="status-pill">ACCEPTING_SCHOLARLY_MANUSCRIPTS</span>
+        <span>›</span>
+        <span>academic &amp; academic-adjacent projects especially welcome</span>
+      </div>
+    </div>
+
+    <main>
+      <!-- Overview -->
+      <section id="overview">
+        <div class="section-header">
+          <h3>Overview</h3>
+        </div>
+
+        <div class="highlight-box">
+          I specialize in editing manuscripts where clarity, structure, and intellectual rigor directly affect outcomes,
+          including dissertations, monographs, journal articles, grant proposals, and policy or research reports.
+        </div>
+
+        <p>
+          Scholars, institutions, and research organizations turn to me when ambiguity would be costly:
+          tenure decisions, publication prospects, grant competition, or the credibility of formal research output.
+        </p>
+
+        <p>
+          My work strengthens the argument, improves readability, and ensures stylistic consistency—without diluting the author’s
+          voice or analytical nuance.
+        </p>
+
+        <div class="inline-badges mono">
+          <span class="badge">&gt; manuscript clarity</span>
+          <span class="badge">&gt; structural coherence</span>
+          <span class="badge">&gt; reader-oriented precision</span>
+        </div>
+      </section>
+
+      <!-- About / Credentials -->
+      <section id="about">
+        <div class="section-header">
+          <h3>Background &amp; Approach</h3>
+        </div>
+
+        <p>
+          I hold a PhD in comparative literature and have a long-standing interest in how arguments are built on the page—not just at the level of sentences, but at the level of structure and emphasis.
+        </p>
+
+        <p>
+          My editorial experience includes work on:
+        </p>
+
+        <ul>
+          <li>Academic monographs in the humanities, social sciences, and economics</li>
+          <li>Research-based and technical manuscripts aimed at practitioners and advanced students</li>
+          <li>Dissertations and dissertation-to-book revisions</li>
+          <li>Articles, reports, and book projects for institutes and scholarly-oriented publishers</li>
+        </ul>
+
+        <p class="hint">
+          In practice, this means I am comfortable following dense, technical, or philosophical arguments
+          while still paying close attention to rhythm, tone, and the experience of the eventual reader.
+        </p>
+      </section>
+
+      <!-- Editorial Focus -->
+      <section id="focus">
+        <div class="section-header">
+          <h3>Editorial Focus</h3>
+        </div>
+
+        <p>
+          I help authors strengthen the clarity, structure, and coherence of research-driven manuscripts.
+          The level of work varies by project, but typically includes:
+        </p>
+
+        <ul>
+          <li>Line-level editing for precision, tone, and readability</li>
+          <li>Structural clarity — ensuring arguments are easy to follow</li>
+          <li>Smoothing dense or technical passages without simplification</li>
+          <li>Consistency in terminology, phrasing, and citation handling</li>
+          <li>Preparation for submission to scholarly presses or journals</li>
+        </ul>
+
+        <div class="info-strip">
+          <span class="strong-label">Formats:</span>
+          monographs, dissertations (and dissertation-to-book conversions), journal articles, grant proposals,
+          research-based trade nonfiction, and policy/think-tank reports.
+        </div>
+      </section>
+
+      <hr class="rule">
+
+      <!-- Who I Work With -->
+      <section id="fit">
+        <div class="section-header">
+          <h3>Who I Work With</h3>
+        </div>
+
+        <p>
+          I am a strong fit for authors and organizations whose work requires clarity and intellectual rigor:
+        </p>
+
+        <ul>
+          <li>Academic faculty preparing manuscripts or edited collections</li>
+          <li>PhD candidates polishing dissertation chapters or articles</li>
+          <li>Scholars adapting research into publishable monographs</li>
+          <li>Institutes and think tanks producing analytical reports</li>
+          <li>Authors of research-based nonfiction</li>
+          <li>Labs and research groups preparing grant proposals</li>
+        </ul>
+
+        <p class="hint">
+          If your writing involves complex argumentation or specialized audiences, I likely can help.
+        </p>
+      </section>
+
+      <hr class="rule">
+
+      <!-- Process -->
+      <section id="process">
+        <div class="section-header">
+          <h3>Process</h3>
+        </div>
+
+        <p>
+          A straightforward and collaborative workflow:
+        </p>
+
+        <ol>
+          <li><strong>Initial discussion:</strong> Scope, stakes, and timeline.</li>
+          <li><strong>Sample review:</strong> A short excerpt to calibrate style and needs.</li>
+          <li><strong>Proposal:</strong> Clear estimate and schedule.</li>
+          <li><strong>Edit:</strong> Line and structural refinement with concise annotations.</li>
+          <li><strong>Review:</strong> You remain in full control over revisions.</li>
+        </ol>
+
+        <p class="hint">
+          Longer manuscripts may be phased so you can confirm editorial approach before committing to the full text.
+        </p>
+      </section>
+
+      <hr class="rule">
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-header">
+          <h3>Contact</h3>
+        </div>
+
+        <p>
+          To start a conversation about your project, please include:
+        </p>
+
+        <ul>
+          <li>Project type and intellectual domain</li>
+          <li>Intended audience or publication venue</li>
+          <li>Approximate word count</li>
+          <li>Your ideal timeline</li>
+          <li>(Optional) A short excerpt (for example, 3–5 pages)</li>
+        </ul>
+
+        <p class="center">
+          <span class="strong-label">Email:</span>
+          <span id="email"></span>
+        </p>
+
+        <p class="center small">
+          <noscript>
+            (Email: editing [at] seantommasi [dot] com)
+          </noscript>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <hr>
+      <div class="mono">
+        &copy; <span id="year"></span>  Sean&nbsp;Tommasi  ::  Scholarly Manuscript Editing
+        <br>
+        page_last_modified &gt; <span id="lastUpdated"></span>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var now = new Date();
+    var yearEl = document.getElementById("year");
+    var lastEl = document.getElementById("lastUpdated");
+    if (yearEl) yearEl.textContent = now.getFullYear();
+    if (lastEl) lastEl.textContent = document.lastModified;
+  })();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var user = "editing";
+    var domain = "seantommasi.com";
+    var link = user + "@" + domain;
+    var emailSpan = document.getElementById("email");
+    if (emailSpan) {
+      emailSpan.innerHTML = '<a href="mailto:' + link + '">' + link + '</a>';
+    }
+  });
+</script>
+
+</body>
+</html>
